@@ -1,0 +1,25 @@
+{
+    "name": "fillo-js",
+    "version": "1.0.0",
+    "description": "to query data from excel file",
+    "main": "index.js",
+    "scripts": {
+      "test": "webpack ./test"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/sirajpathan/fillo-js.git"
+    },
+    "keywords": [
+      "fillo",
+      "fillojs",
+      "excel",
+      "query"
+    ],
+    "author": "pathan.siraj@hotmail.com",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/sirajpathan/fillo-js/issues"
+    },
+    "homepage": "https://github.com/sirajpathan/fillo-js#readme"
+}
