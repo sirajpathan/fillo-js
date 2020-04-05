@@ -1,25 +1,31 @@
 {
-    "name": "fillo-js",
-    "version": "1.0.0",
-    "description": "to query data from excel file",
-    "main": "index.js",
-    "scripts": {
-      "test": "webpack ./test"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/sirajpathan/fillo-js.git"
-    },
-    "keywords": [
-      "fillo",
-      "fillojs",
-      "excel",
-      "query"
-    ],
-    "author": "pathan.siraj@hotmail.com",
-    "license": "ISC",
-    "bugs": {
-      "url": "https://github.com/sirajpathan/fillo-js/issues"
-    },
-    "homepage": "https://github.com/sirajpathan/fillo-js#readme"
+  "name": "fillo-js",
+  "version": "1.0.0",
+  "description": "to query data from excel file",
+  "main": "index.js",
+  "scripts": {
+    "test": "cross-env BABEL_ENV=commonjs node --throw-deprecation ./node_modules/jest/bin/jest.js test/unit/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sirajpathan/fillo-js.git"
+  },
+  "keywords": [
+    "fillo",
+    "fillojs",
+    "excel",
+    "query"
+  ],
+  "author": "pathan.siraj@hotmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sirajpathan/fillo-js/issues"
+  },
+  "homepage": "https://github.com/sirajpathan/fillo-js#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.9.0",
+    "babel-jest": "^25.2.6",
+    "cross-env": "^7.0.2",
+    "jest": "^25.2.7"
+  }
 }

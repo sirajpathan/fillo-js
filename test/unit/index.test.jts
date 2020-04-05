@@ -1,0 +1,10 @@
+import assert from 'assert';
+import Filo from '../../src/filo.js';
+
+// xdescribe('filo', () => {
+//   test('filo sort order (default)', () => {
+//     const filo = new Filo();
+//     console.log(filo.query("select * from books"));
+//     assert.equal('I will pass', 'I will pass');
+//   });
+// });
