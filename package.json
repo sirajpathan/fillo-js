@@ -1,0 +1,41 @@
+{
+  "name": "fillo-js",
+  "version": "1.0.0",
+  "description": "to query data from excel file",
+  "main": "index.js",
+  "scripts": {
+    "test": "cross-env BABEL_ENV=commonjs node --throw-deprecation ./node_modules/jest/bin/jest.js test/unit/",
+    "babel": "babel --presets es2015 js/main.js -o build/main.bundle.js",
+    "start": "http-server",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sirajpathan/fillo-js.git"
+  },
+  "keywords": [
+    "fillo",
+    "fillojs",
+    "excel",
+    "query"
+  ],
+  "author": "pathan.siraj@hotmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sirajpathan/fillo-js/issues"
+  },
+  "homepage": "https://github.com/sirajpathan/fillo-js#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.9.0",
+    "babel-jest": "^25.2.6",
+    "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
+    "jest": "^25.2.7",
+    "webpack": "^4.16.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "read-excel-file": "^4.0.6",
+    "sqlite3": "^4.1.1"
+  }
+}
