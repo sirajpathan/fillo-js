@@ -1,1 +1,1 @@
-export { default as filo } from './filo.js';
+export { fillo } from './fillo.js';
