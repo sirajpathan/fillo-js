@@ -1,10 +1,14 @@
+import {updateXls} from './utils';
+
 export function query (db, str, params) {
     const op = str.match(/^(\w)+/g)[0].toLowerCase();
     switch (op) {
         case "select":
             return select(db, str, params);
-        case "insert":
-            return insert(db);
+            case "insert":
+                return insertOrUpdate(db, str, params);
+            case "update":
+                return insertOrUpdate(db, str, params);
         default:
             return Promise.reject('Incorrect query');
     }
@@ -14,8 +18,7 @@ export function select (db, str, params = []) {
     return new Promise((resolve, reject) => {
         db.serialize(function() {
             let data = [];
-            db.each(str, function(err, row) {
-                console.log(row.id + ": " + row.info);
+            db.each(str, params, function(err, row) {
                 data.push(row);
             }, () => {
                 resolve(data);
@@ -24,15 +27,10 @@ export function select (db, str, params = []) {
     });
 }
 
-export function insert (str, params) {
+export function insertOrUpdate (db, str, params = []) {
     return new Promise((resolve, reject) => {
-        db.serialize(function() {
-            db.run("INSERT INTO foo VALUES (?)", 1, function() {
-                // These queries will run in parallel and the second query will probably
-                // fail because the table might not exist yet.
-                db.run("CREATE TABLE bar (num)");
-                db.run("INSERT INTO bar VALUES (?)", 1);
-            });
+        db.serialize(() => {
+            db.run(str, params, err => err ? reject(err) : resolve('success'));
         });
     });
 }
