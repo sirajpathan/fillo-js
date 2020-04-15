@@ -37,5 +37,4 @@ f.query("UPDATE my_table SET name = ? WHERE id = ?", ['new name', 1])
 ```
 
 ### Pending features
-* Delete query not added
 * Comparisons like greater than (>) and less than (<) are not added
