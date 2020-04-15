@@ -8,19 +8,23 @@ function filo (options) {
         tableName = "fillo_table"
     } = options;
     let db;
-    let updateDataFile = () => {
-        return query(db, `SELECT * FROM ${tableName}`)
-            .then(json => {
-                return updateXls(json);
-            });
 
-    };
     this.init = function (cb) {
         importExceltoJson(dataFile, tableName, (err, data) => {
             db = data.db;
             cb();
         });
     };
+
+    let updateDataFile = (data) => {
+        return query(db, `SELECT * FROM ${tableName}`)
+            .then(json => {
+                return updateXls(json);
+            })
+            .then(() => data);
+
+    };
+
     this.query = function (str, params) {
         return query(db, str, params)
             .then(updateDataFile);
