@@ -8,7 +8,7 @@ export function query (db, str, params) {
         case "update":
             return insertOrUpdate(db, str, params);
         case "delete":
-                return insertOrUpdate(db, str, params);
+            return insertOrUpdate(db, str, params);
         default:
             return Promise.reject("Incorrect query");
     }
