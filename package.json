@@ -6,8 +6,10 @@
   "scripts": {
     "test": "cross-env BABEL_ENV=commonjs node --throw-deprecation ./node_modules/jest/bin/jest.js test/unit/",
     "babel": "babel --presets es2015 js/main.js -o build/main.bundle.js",
-    "start": "http-server",
-    "build": "webpack"
+    "build": "webpack",
+    "lint": "eslint --ext .js src test/unit",
+    "lint:fix": "eslint --ext .js src test/unit --fix",
+    "start": "http-server"
   },
   "repository": {
     "type": "git",
@@ -27,15 +29,19 @@
   "homepage": "https://github.com/sirajpathan/fillo-js#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.9.0",
+    "babel-eslint": "^10.1.0",
     "babel-jest": "^25.2.6",
     "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
+    "eslint": "^6.8.0",
     "jest": "^25.2.7",
-    "webpack": "^4.16.0",
+    "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
+    "json2xls": "^0.1.2",
     "read-excel-file": "^4.0.6",
+    "serialize-javascript": "^2.1.1",
     "sqlite3": "^4.1.1"
   }
 }
