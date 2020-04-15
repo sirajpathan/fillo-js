@@ -28,7 +28,7 @@ describe("Select", () => {
     test("Get table data with WHERE clause", (done) => {
         query(db, `SELECT * FROM ${tableName} WHERE id='1'`)
             .then(data => {
-                assert.equal(JSON.stringify(data), JSON.stringify([{id: "1", name: "siraj"}]));
+                assert.equal(JSON.stringify(data), JSON.stringify([{id: "1", name: "tylor"}]));
                 done();
             })
             .catch(done);
@@ -39,7 +39,7 @@ describe("Select", () => {
 describe("UPDATE", () => {
 
     test("Get table data", (done) => {
-        query(db, `UPDATE ${tableName} SET name = ? WHERE id = ?`, ["Siraj Pathan", 1])
+        query(db, `UPDATE ${tableName} SET name = ? WHERE id = ?`, ["Tylor Swift", 1])
             .then(data => {
                 assert.equal(data, "success");
                 done();
@@ -50,7 +50,7 @@ describe("UPDATE", () => {
     test("Get table data with WHERE clause", (done) => {
         query(db, `SELECT * FROM ${tableName} WHERE id='1'`)
             .then(data => {
-                assert.equal(data[0].name, "Siraj Pathan");
+                assert.equal(data[0].name, "Tylor Swift");
                 done();
             })
             .catch(done);
@@ -67,6 +67,22 @@ describe("INSERT", () => {
             })
             .then(data => {
                 assert.equal(data[0].name, "zayn");
+                done();
+            })
+            .catch(done);
+    });
+});
+
+describe("DELETE", () => {
+
+    test("delete data from the table", (done) => {
+        query(db, `DELETE from ${tableName} WHERE id=?`, [1])
+            .then(data => {
+                assert.equal(data, "success");
+                return query(db, `SELECT * FROM ${tableName}`);
+            })
+            .then(data => {
+                assert.equal(data[0].name, "bruce");
                 done();
             })
             .catch(done);
