@@ -2,7 +2,7 @@
   "name": "fillo-js",
   "version": "1.0.0",
   "description": "to query data from excel file",
-  "main": "index.js",
+  "main": "build/main.bundle.js",
   "scripts": {
     "test": "cross-env BABEL_ENV=commonjs node --throw-deprecation ./node_modules/jest/bin/jest.js test/unit/",
     "babel": "babel --presets es2015 js/main.js -o build/main.bundle.js",
@@ -39,6 +39,7 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
+    "fs": "0.0.1-security",
     "json2xls": "^0.1.2",
     "read-excel-file": "^4.0.6",
     "serialize-javascript": "^2.1.1",
