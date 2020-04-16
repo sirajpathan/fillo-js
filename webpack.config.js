@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     entry: './src/fillo.js',
-    mode: 'development',
+    mode: 'production',
     target: 'node',
     resolve: {
         extensions: ['.js']
