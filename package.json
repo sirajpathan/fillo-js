@@ -2,10 +2,9 @@
   "name": "fillo-js",
   "version": "1.0.0",
   "description": "to query data from excel file",
-  "main": "build/main.bundle.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "cross-env BABEL_ENV=commonjs node --throw-deprecation ./node_modules/jest/bin/jest.js test/unit/",
-    "babel": "babel --presets es2015 js/main.js -o build/main.bundle.js",
     "build": "webpack",
     "lint": "eslint --ext .js src test/unit",
     "lint:fix": "eslint --ext .js src test/unit --fix",
