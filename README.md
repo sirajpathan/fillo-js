@@ -1,5 +1,6 @@
 
-# fillo-js ![Node.js CI](https://github.com/sirajpathan/fillo-js/workflows/Node.js%20CI/badge.svg?branch=master&event=status)
+# fillo-js
+![CI](https://github.com/sirajpathan/fillo-js/workflows/CI/badge.svg?branch=master&event=push)
 
 This Module is replication of Java library Fillo. It is used to query data from excel file.
 It uses sqlite3 and read-excel-file to create in memory database from excel file.
